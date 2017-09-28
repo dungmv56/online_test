@@ -43,7 +43,7 @@ def email_verified(func):
         ci = RequestContext(request)
         user = request.user
         context = {}
-        if not settings.IS_DEVELOPMENT:
+        if False and not settings.IS_DEVELOPMENT:
             if user.is_authenticated() and user_has_profile(user):
                 if not user.profile.is_email_verified:
                     context['success'] = False
